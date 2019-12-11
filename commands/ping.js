@@ -1,3 +1,3 @@
 module.exports = msg => {
-    msg.reply('Pong!')
+    msg.reply('Pong!');
 }
