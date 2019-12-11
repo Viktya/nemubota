@@ -1,19 +1,17 @@
-require('dotenv').config()
-
-const fs = require('fs')
-const Discord = require('discord.js')
-const client = new Discord.Client()
+require('dotenv').config();
+const Discord = require('discord.js');
+const fs = require('fs');
+const client = new Discord.Client();
 
 fs.readdir('./events/', (err, files) => {   // Legge i files nella folder
     files.forEach(file => {
-        const eventHandler = require(`./events/${file}`)
-        const eventName = file.split('.')[0]
-        
-        client.on(eventName, (...args) => eventHandler(client, ...args))
-    })
-})
+        const eventHandler = require(`./events/${file}`);
+        const eventName = file.split('.')[0];
+        client.on(eventName, (...args) => eventHandler(client, ...args));
+    });
+});
 
-client.login(process.env.BOT_TOKEN)   // Token Bot
+client.login(process.env.BOT_TOKEN);    // Token Bot
 
 // Main guide:
 // https://discord.js.org/#/docs/main/stable/class/Client
