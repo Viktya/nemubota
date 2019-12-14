@@ -14,6 +14,6 @@ fs.readdir('./events/', (err, files) => {   // Legge i files nella folder
 client.login(process.env.BOT_TOKEN);    // Token Bot
 
 // Main guide:
-// https://discord.js.org/#/docs/main/stable/class/Client
+// https://thomlom.dev/create-a-discord-bot-under-15-minutes/
 // Discord events:
 // https://discord.js.org/#/docs/main/stable/class/Client
